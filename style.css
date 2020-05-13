@@ -14,7 +14,7 @@ html {
   /*------
   border
   -------*/
-
+  --border-main-white: 1px solid var(--color-white);
   --border-radius-background: .25rem;
   --border-color-section-seperators: #65696c;
 
@@ -116,6 +116,10 @@ html {
   background-image: url(img/bg-img/with-opacity/ireland-coast-70.png);
 }
 
+.landing-contact {
+  background-image: url(img/bg-img/with-opacity/budapest-70.png);
+}
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -126,55 +130,10 @@ img {
   display: block;
 }
 
-/*-------------------
-   Hero Link Button
----------------------*/
-
-.button-hero {
-  background-color: var(--color-gold-transparent);
-  border: 1px solid var(--color-white);
-  color: var(--color-white);
-  font-size: var(--font-size-one);
-  margin: auto;
-  padding: 2rem 4rem;
-  text-align: center;
-}
-
-.button-hero:hover {
-  animation: jump 2s ease;
-  background-color: transparent;
-}
-
-@keyframes jump {
-  0%   { 
-    transform: scale(1,1) translateY(0); 
-  }
-  10%  { 
-    transform: scale(1.1,.8) translateY(0);
-  }
-  30%  { 
-    transform: scale(.9,1.2) translateY(-100px);
-  }
-  50%  { 
-    transform: scale(1.05,.97) translateY(0); }
-  57%  { 
-    transform: scale(1,1) translateY(-6px); 
-  }
-  65%  { 
-    transform: scale(1,1) translateY(0); 
-  }
-  100% { 
-    transform: scale(1,1) translateY(0); 
-  }
-}
-
 @media (min-width: 900px ) {
 
   html {
     background-size: cover;
-  }
-
-  .landing-portfolio, .landing-portfolio-project1, .landing-portfolio-project2 {
     background-position: center;
   }
 }
@@ -206,6 +165,21 @@ h3 {
   font-weight: 400;
   margin: 0 auto;
 
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h6 {
+  color: var(--color-grey);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 a {
@@ -283,6 +257,49 @@ ul ul li {
   list-style: none;
   margin: 0;
 }
+
+/*-------------------
+   Hero Link Button
+---------------------*/
+
+.button-hero {
+  background-color: var(--color-gold-transparent);
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  font-size: var(--font-size-one);
+  margin: auto;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.button-hero:hover {
+  animation: jump 2s ease;
+  background-color: transparent;
+}
+
+@keyframes jump {
+  0%   { 
+    transform: scale(1,1) translateY(0); 
+  }
+  10%  { 
+    transform: scale(1.1,.8) translateY(0);
+  }
+  30%  { 
+    transform: scale(.9,1.2) translateY(-100px);
+  }
+  50%  { 
+    transform: scale(1.05,.97) translateY(0); }
+  57%  { 
+    transform: scale(1,1) translateY(-6px); 
+  }
+  65%  { 
+    transform: scale(1,1) translateY(0); 
+  }
+  100% { 
+    transform: scale(1,1) translateY(0); 
+  }
+}
+
 
 @media (min-width: 900px) {
 
@@ -687,7 +704,8 @@ ul ul li {
   .grid-portfolio .content-title {
     grid-column: 2/ span 4;
   }
-    .grid-portfolio .project-1 {
+
+  .grid-portfolio .project-1 {
     grid-column: 2/ span 2;
     grid-row-start: 3;
   }
@@ -947,6 +965,107 @@ ul ul li {
   margin: 1rem auto;
   padding: 1rem 1.5rem;
 }
+
+/*-----------------------------------------------------------------
+    Contact Form Components
+-------------------------------------------------------------------*/
+.content-form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+form, textarea, input {
+  background-color: var(--color-grey-dark-transparent);
+  border: var(--border-main-white);
+  border-radius: var(--border-radius-background);
+  color: var(--color-white);
+  margin: 1rem auto;
+  padding: 3rem 4rem;
+}
+
+textarea, input {
+  background-color: var(--color-grey-transparent);
+  min-width: 35%;
+} 
+
+label {
+  font-size: var(--font-size-one);
+  margin-right: .5rem;
+}
+
+
+textarea {
+  min-height: 10%;
+  min-width: 10%;
+}
+
+form div {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem auto;
+}
+
+input {
+  padding: .30rem;
+  max-width: 35rem;
+  min-width: 55%;
+}
+
+.form-submit {
+  display: inline-block;
+  background-color: var(--color-gold-transparent);
+  border: var(--border-main-white);
+  border-radius: var(--border-radius-background);
+  color: var(--color-white);
+  font-size: 1rem;
+  margin: 1.5rem auto;
+  max-width: auto;
+  padding: 1rem 3rem;
+  text-align: center;
+  transition: all .5s ease;
+ }
+
+ .form-submit:hover {
+  background-color: transparent;
+  color: var(--color-gold);
+  transition: all .5s ease; 
+ }
+
+@media ( min-width: 750px ) {
+
+form {
+  min-width: 35rem;
+}
+
+form div {
+  justify-content: flex-start;
+}
+
+textarea {
+  margin: auto;
+  min-height: 35%;
+  min-width: 45%;
+}
+
+.content-form {
+  grid-column: 2 / span 4;
+}
+
+.form-submit {
+  padding: 2rem 4rem;
+}
+
+ }
+
+ @media (min-width: 1000px) {
+    .content-form {
+      grid-column: 5 / span 7;
+  }
+}
+
 
 /*-----------------------------------------------------------------
   Footer Components
